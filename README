@@ -1,0 +1,21 @@
+Multi-Paxos toy cluster (5 nodes) with a CSV-driven client.
+
+Requirements
+- Python 3.10+ (no external packages).
+- macOS only for `--spawn-terminals`; otherwise run nodes manually.
+
+Run (macOS, auto terminals) - dont have a windows /  pc to test it, I am sorry!
+- `python3 paxos.py --csv CSE535-F25-Project-1-Testcases.csv --spawn-terminals`
+
+Run (manual, any OS)
+- In 5 terminals: `python3 paxos.py --mode node --id 1..5`
+- Then: `python3 paxos.py --mode csv --csv CSE535-F25-Project-1-Testcases.csv --no-start-nodes`
+
+Node REPL
+- `printLog`, `printFullLog`, `printDB`, `printLeader`, `printStatus <seq>`, `printView`, `printCheckpoint`, `printCheckpointHistory`, `printCompactedLog`, `quit`.
+
+Benchmark
+- `python3 paxos.py --mode bench --ops 50 --concurrency 20 --zipf-s 0.9`
+
+Acknowledgment
+- README wording and some print/log statement adjustments were refined with the help of ChatGPT to keep behavior and documentation aligned with the assignment requirements.
